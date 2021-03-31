@@ -1,0 +1,40 @@
+﻿@{ ViewData["Title"] = "Home Page"; }
+
+<h1>exam</h1>
+
+<form action="javascript:void(0);" method="POST" onsubmit="addexam()">
+    <input type="text" id="Description" placeholder="Description">
+    <input type="text" id="IsDone" placeholder="IsDone">
+    <input type="submit" value="Add">
+
+</form>
+
+<div id="editForm">
+    <h3>Edit</h3>
+    <form action="javascript:void(0);" onsubmit="updateItem()">
+        <input type="hidden" id="editExam">
+        <input type="text" id="editDescription" placeholder="Description">
+        <input type="text" id="IsDone" placeholder="IsDone">
+        <input type="submit" value="Save">
+        <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+    </form>
+</div>
+
+<p id="counter"></p>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+
+            <th>Description</th>
+            <th>IsDone</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody id="examlist"></tbody>
+</table>
+
+<script src="js/site.js" asp-append-version="true"></script>
+
+<script type="text/javascript">getexams();</script>
